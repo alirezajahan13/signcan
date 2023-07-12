@@ -1,0 +1,31 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+//Text Colors
+$textColorDark: #402c2d;
+$textColorLowSat: #3e3434;
+$textColorSemi: #c14448;
+$textColorLight: #796f6f;
+$textColorLighter: #b5b5b5;
+
+//Main Colors
+$mainColor: #ed1d27;
+$mainColorDark: #500b0e;
+$lowSatColor: #ec7f84;
+$offColor: #505255;
+
+// //Back Colors
+$backColorLight: #e6e6e6;
+$backColorLighter: #f6f6f6;
+$backColorDark: #aaaaaa;
+$backColorGreen: #29b380;
+
+
+
+
+@mixin placeholder {
+	&::-webkit-input-placeholder {@content}
+	&:-moz-placeholder           {@content}
+	&::-moz-placeholder          {@content}
+	&:-ms-input-placeholder      {@content}  
+}
