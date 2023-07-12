@@ -23,6 +23,87 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 
 @import 'sass/variables'; 
-@import 'sass/source'; 
+@import 'sass/source';
+@import 'sass/breakpoints';
 
+.mainFooterBack{
+    margin-bottom: 0;
+    .iconSocialSection{
+        .iconSocialFooter{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            a{
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                margin: 0 5px;
+            }
+        }
+    }
+    .mainFooter{
+        background-color: $backColorLighter;
+        .mainFooterInner{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            li{
+                // margin: 20px 0;
+                display: flex;
+                align-items: center;
+            }
+            .footerCulomn1 , .footerCulomn2{
+                width: 20%;
+                @include xs{
+                    width: 100% !important;
+                }
+                @include sm{
+                    width: 40%;
+                }
+                @include md{
+                    width: 40%;
+                }
+            }
+            .footerCulomn2{
+                li{
+                    svg{
+                        margin-right: 7px;
+                    }
+                    a{
+                        width: 80%;
+                        display: inline-block;
+                    }
+                }
+            }
+            .footerCulomn3{
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                @include xs{
+                    width: 100%;
+                }
+                @include sm{
+                    width: 100%;
+                }
+                @include md{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+.copyRightSectionBack{
+    background-color: $backColorLighter;
+    .copyRight{
+        border-top: 2px solid $backColorLight;
+       p{
+        color: $textColorDark;
+        a{
+            color: $textColorSemi;
+        }
+    } 
+    }
     
+}

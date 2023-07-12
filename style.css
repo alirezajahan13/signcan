@@ -516,4 +516,91 @@ table td strong {
 }
 .informMessage::before {
   content: url("data:image/svg+xml,%3Csvg fill='%230e414c' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30.063 30.063' style='enable-background:new 0 0 30.063 30.063' xml:space='preserve'%3E%3Cpath d='m17.577 26.354 2.343.124v3.286h-9.778v-3.124l1.356-.123c.739-.084 1.191-.329 1.191-1.315V13.781c0-.908-.247-1.195-1.028-1.195l-1.437-.08V9.096h7.353v17.258zM14.703.299c1.808 0 3.124 1.359 3.124 3.083 0 1.728-1.315 3.001-3.165 3.001-1.889 0-3.124-1.275-3.124-3.001 0-1.725 1.235-3.083 3.165-3.083z'/%3E%3C/svg%3E");
+}
+
+.mainFooterBack {
+  margin-bottom: 0;
+}
+.mainFooterBack .iconSocialSection .iconSocialFooter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.mainFooterBack .iconSocialSection .iconSocialFooter a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  margin: 0 5px;
+}
+.mainFooterBack .mainFooter {
+  background-color: #f6f6f6;
+}
+.mainFooterBack .mainFooter .mainFooterInner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.mainFooterBack .mainFooter .mainFooterInner li {
+  display: flex;
+  align-items: center;
+}
+.mainFooterBack .mainFooter .mainFooterInner .footerCulomn1, .mainFooterBack .mainFooter .mainFooterInner .footerCulomn2 {
+  width: 20%;
+}
+@media screen and (max-width: 480px) {
+  .mainFooterBack .mainFooter .mainFooterInner .footerCulomn1, .mainFooterBack .mainFooter .mainFooterInner .footerCulomn2 {
+    width: 100% !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .mainFooterBack .mainFooter .mainFooterInner .footerCulomn1, .mainFooterBack .mainFooter .mainFooterInner .footerCulomn2 {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .mainFooterBack .mainFooter .mainFooterInner .footerCulomn1, .mainFooterBack .mainFooter .mainFooterInner .footerCulomn2 {
+    width: 40%;
+  }
+}
+.mainFooterBack .mainFooter .mainFooterInner .footerCulomn2 li svg {
+  margin-right: 7px;
+}
+.mainFooterBack .mainFooter .mainFooterInner .footerCulomn2 li a {
+  width: 80%;
+  display: inline-block;
+}
+.mainFooterBack .mainFooter .mainFooterInner .footerCulomn3 {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 480px) {
+  .mainFooterBack .mainFooter .mainFooterInner .footerCulomn3 {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .mainFooterBack .mainFooter .mainFooterInner .footerCulomn3 {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .mainFooterBack .mainFooter .mainFooterInner .footerCulomn3 {
+    width: 100%;
+  }
+}
+
+.copyRightSectionBack {
+  background-color: #f6f6f6;
+}
+.copyRightSectionBack .copyRight {
+  border-top: 2px solid #e6e6e6;
+}
+.copyRightSectionBack .copyRight p {
+  color: #402c2d;
+}
+.copyRightSectionBack .copyRight p a {
+  color: #c14448;
 }/*# sourceMappingURL=style.css.map */
