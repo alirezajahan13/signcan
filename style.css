@@ -269,28 +269,28 @@ input {
   margin-top: 5px;
   display: block;
   width: 100%;
-  padding: 10px 15px;
+  padding: 10px;
 }
-input[type=text], input[type=password], input[type=email], input[type=tel], input[type=url] {
+input[type=text], input[type=password], input[type=search], input[type=email], input[type=tel], input[type=url] {
   border: none;
   background-color: #f6f6f6;
-  border-radius: 10px;
+  border-radius: 10px !important;
   color: #402c2d;
   font-size: 13px;
 }
-input[type=text]::-webkit-input-placeholder, input[type=password]::-webkit-input-placeholder, input[type=email]::-webkit-input-placeholder, input[type=tel]::-webkit-input-placeholder, input[type=url]::-webkit-input-placeholder {
+input[type=text]::-webkit-input-placeholder, input[type=password]::-webkit-input-placeholder, input[type=search]::-webkit-input-placeholder, input[type=email]::-webkit-input-placeholder, input[type=tel]::-webkit-input-placeholder, input[type=url]::-webkit-input-placeholder {
   color: #500b0e;
   opacity: 0.25;
 }
-input[type=text]:-moz-placeholder, input[type=password]:-moz-placeholder, input[type=email]:-moz-placeholder, input[type=tel]:-moz-placeholder, input[type=url]:-moz-placeholder {
+input[type=text]:-moz-placeholder, input[type=password]:-moz-placeholder, input[type=search]:-moz-placeholder, input[type=email]:-moz-placeholder, input[type=tel]:-moz-placeholder, input[type=url]:-moz-placeholder {
   color: #500b0e;
   opacity: 0.25;
 }
-input[type=text]::-moz-placeholder, input[type=password]::-moz-placeholder, input[type=email]::-moz-placeholder, input[type=tel]::-moz-placeholder, input[type=url]::-moz-placeholder {
+input[type=text]::-moz-placeholder, input[type=password]::-moz-placeholder, input[type=search]::-moz-placeholder, input[type=email]::-moz-placeholder, input[type=tel]::-moz-placeholder, input[type=url]::-moz-placeholder {
   color: #500b0e;
   opacity: 0.25;
 }
-input[type=text]:-ms-input-placeholder, input[type=password]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder, input[type=tel]:-ms-input-placeholder, input[type=url]:-ms-input-placeholder {
+input[type=text]:-ms-input-placeholder, input[type=password]:-ms-input-placeholder, input[type=search]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder, input[type=tel]:-ms-input-placeholder, input[type=url]:-ms-input-placeholder {
   color: #500b0e;
   opacity: 0.25;
 }
@@ -426,7 +426,7 @@ table td strong {
 }
 
 .generalButton {
-  padding: 10px 20px;
+  padding: 15px;
   width: -moz-max-content;
   width: max-content;
   margin: 30px 10px;
@@ -435,7 +435,7 @@ table td strong {
   border: 1px solid #aaaaaa;
   color: #402c2d;
   cursor: pointer;
-  display: block;
+  display: flex;
   transition: all 0.3s;
 }
 .generalButton:hover {
@@ -516,4 +516,76 @@ table td strong {
 }
 .informMessage::before {
   content: url("data:image/svg+xml,%3Csvg fill='%230e414c' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30.063 30.063' style='enable-background:new 0 0 30.063 30.063' xml:space='preserve'%3E%3Cpath d='m17.577 26.354 2.343.124v3.286h-9.778v-3.124l1.356-.123c.739-.084 1.191-.329 1.191-1.315V13.781c0-.908-.247-1.195-1.028-1.195l-1.437-.08V9.096h7.353v17.258zM14.703.299c1.808 0 3.124 1.359 3.124 3.083 0 1.728-1.315 3.001-3.165 3.001-1.889 0-3.124-1.275-3.124-3.001 0-1.725 1.235-3.083 3.165-3.083z'/%3E%3C/svg%3E");
+}
+
+.flexBoxParent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dgwt-wcas-search-form .dgwt-wcas-sf-wrapp {
+  padding-left: 0 !important;
+}
+.dgwt-wcas-search-form .dgwt-wcas-sf-wrapp .dgwt-wcas-search-submit {
+  right: 23px !important;
+  left: unset !important;
+}
+
+.dgwt-wcas-style-pirx .dgwt-wcas-sf-wrapp input[type=search] {
+  padding-left: 24px !important;
+}
+
+.mainHeaderParent {
+  padding: 20px 0;
+}
+.mainHeaderParent .mainHeader .headerPartLeft, .mainHeaderParent .mainHeader .headerParetRight {
+  width: 48%;
+}
+.mainHeaderParent .mainHeader .headerMobileIcon {
+  display: none;
+}
+@media screen and (max-width: 480px) {
+  .mainHeaderParent .mainHeader .headerMobileIcon {
+    display: block;
+  }
+}
+.mainHeaderParent .mainHeader .headerPartLeft a {
+  display: flex;
+  height: auto;
+  width: 100px;
+}
+@media screen and (max-width: 480px) {
+  .mainHeaderParent .mainHeader .headerParetRight {
+    display: none;
+  }
+}
+.mainHeaderParent .mainHeader .headerParetRight .rightHeaderUp, .mainHeaderParent .mainHeader .headerParetRight .rightHeaderDown {
+  width: 100%;
+}
+.mainHeaderParent .mainHeader .headerParetRight .generalButton {
+  margin: 0;
+  margin-right: 3px;
+  height: -moz-max-content;
+  height: max-content;
+}
+.mainHeaderParent .mainHeader .headerParetRight .headerLoginBtn svg {
+  margin-right: 10px;
+}
+.mainHeaderParent .mainHeader .headerParetRight .rightHeaderUp .dgwt-wcas-search-wrapp {
+  width: 75%;
+  margin: 0;
+}
+.mainHeaderParent .mainHeader .headerParetRight .rightHeaderDown .desktopMenu ul {
+  padding: 0;
+  margin: 0;
+}
+.mainHeaderParent .mainHeader .headerParetRight .rightHeaderDown .desktopMenu ul li {
+  display: inline-block;
+  margin-right: 25px;
+  padding-left: 0;
+}
+.mainHeaderParent .mainHeader .headerParetRight .rightHeaderDown .desktopMenu ul li::before {
+  display: none;
 }/*# sourceMappingURL=style.css.map */
