@@ -206,11 +206,11 @@ input{
 	margin-top: 5px;
 	display: block;
 	width: 100%;
-	padding: 10px 15px;
-	&[type=text] , &[type=password] , &[type=email] , &[type=tel] , &[type=url]{
+	padding: 10px;
+	&[type=text] , &[type=password] , &[type=search] , &[type=email] , &[type=tel] , &[type=url]{
 		border: none;
 		background-color: $backColorLighter;
-		border-radius: 10px;
+		border-radius: 10px !important;
 		color: $textColorDark;
 		font-size: 13px;
 		@include placeholder{
@@ -336,7 +336,7 @@ table{
 }
 
 .generalButton{
-	padding: 10px 20px;
+	padding: 15px;
     width: max-content;
     margin: 30px 10px;
     background-color: #fff;
@@ -344,7 +344,7 @@ table{
     border: 1px solid $backColorDark;
     color: $textColorDark;
 	cursor: pointer;
-	display: block;
+	display: flex;
 	transition: all 0.3s;
 	&:hover{
 		background-color: lighten($lowSatColor , 15%);
@@ -420,4 +420,10 @@ table{
 	&::before{
 		content: url("data:image/svg+xml,%3Csvg fill='%230e414c' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30.063 30.063' style='enable-background:new 0 0 30.063 30.063' xml:space='preserve'%3E%3Cpath d='m17.577 26.354 2.343.124v3.286h-9.778v-3.124l1.356-.123c.739-.084 1.191-.329 1.191-1.315V13.781c0-.908-.247-1.195-1.028-1.195l-1.437-.08V9.096h7.353v17.258zM14.703.299c1.808 0 3.124 1.359 3.124 3.083 0 1.728-1.315 3.001-3.165 3.001-1.889 0-3.124-1.275-3.124-3.001 0-1.725 1.235-3.083 3.165-3.083z'/%3E%3C/svg%3E");
 	}
+}
+.flexBoxParent{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
 }

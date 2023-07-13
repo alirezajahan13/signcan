@@ -26,6 +26,86 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import 'sass/source';
 @import 'sass/breakpoints';
 
+
+.dgwt-wcas-search-form{
+    .dgwt-wcas-sf-wrapp{
+        padding-left: 0 !important;
+        .dgwt-wcas-search-submit{
+            right: 23px !important;
+            left: unset !important;
+        }
+    }
+}
+.dgwt-wcas-style-pirx{
+    .dgwt-wcas-sf-wrapp{
+        input[type=search]{
+            padding-left: 24px !important;
+        }
+    }
+}
+.mainHeaderParent{
+    padding: 20px 0;
+    .mainHeader{
+        .headerPartLeft , .headerParetRight{
+            width: 48%;
+        }
+        .headerMobileIcon{
+            display: none;
+            @include xs{
+                display: block;
+            }
+        }
+        .headerPartLeft{
+            a{
+                display: flex;
+                height: auto;
+                width: 100px;
+            }
+        }
+        .headerParetRight{
+            @include xs{
+                display: none;
+            }
+            .rightHeaderUp , .rightHeaderDown{
+                width: 100%;
+            }
+            .generalButton{
+                margin: 0;
+                margin-right: 3px;
+                height: max-content;
+            }
+            .headerLoginBtn{
+                svg{
+                    margin-right: 10px;
+                }
+            }
+            .rightHeaderUp{
+                .dgwt-wcas-search-wrapp{
+                    width: 75%;
+                    margin: 0;
+                }
+            }
+            .rightHeaderDown{
+                .desktopMenu{
+                    ul{
+                        padding: 0;
+                        margin: 0;
+                        li{
+                            display: inline-block;
+                            margin-right: 25px;
+                            padding-left: 0;
+                            &::before{
+                                display: none;
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 .mainFooterBack{
     margin-bottom: 0;
     .iconSocialSection{
@@ -100,10 +180,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
         border-top: 2px solid $backColorLight;
        p{
         color: $textColorDark;
-        a{
-            color: $textColorSemi;
-        }
-    } 
+            a{
+                color: $textColorSemi;
+            }
+        } 
     }
     
 }
