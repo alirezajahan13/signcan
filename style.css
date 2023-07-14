@@ -675,4 +675,81 @@ table td strong {
 }
 .copyRightSectionBack .copyRight p a {
   color: #c14448;
+}
+
+.archiveParent {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-gap: 30px;
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 480px) {
+  .archiveParent {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+    grid-gap: 10px !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .archiveParent {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 20px;
+  }
+}
+.archiveParent a {
+  transition: all 0.4s;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.archiveParent a:hover img {
+  transform: scale(1.1);
+}
+.archiveParent a .archiveCardImg {
+  overflow: hidden;
+}
+.archiveParent a img {
+  transition: all 0.4s;
+}
+.archiveParent a .entry-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 50px;
+  font-weight: 600;
+}
+
+.archivePostFooter span {
+  color: #b5b5b5;
+}
+
+.archiveCardCategory {
+  background-color: #f6f6f6;
+  padding: 8px 15px;
+}
+
+.loopAllCategory {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.loopAllCategory a {
+  padding: 10px 20px;
+  margin: 20px 10px;
+}
+
+.generalSinglePostStyle header .entry-title {
+  margin: 10px 0;
+}
+.generalSinglePostStyle header .archivePostFooter {
+  margin: 15px 0;
+}
+
+.singleBox {
+  margin: auto;
+  max-width: 900px;
+}
+
+.comments-area {
+  border-top: 1px solid #e6e6e6;
 }/*# sourceMappingURL=style.css.map */
