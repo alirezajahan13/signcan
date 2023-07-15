@@ -9,9 +9,9 @@
 
  $taxonomy = 'category'; 
  $primary_cat_id=get_post_meta(get_the_id(),'_yoast_wpseo_primary_' . $taxonomy, true);
- if($primary_cat_id){
-	 $primary_cat = get_term($primary_cat_id, $taxonomy);
- }
+//  if($primary_cat_id){
+// 	$primary_cat = get_term($primary_cat_id, $taxonomy);
+//  }
 ?>
 
 
@@ -44,7 +44,7 @@
 
 	<?php signcan_post_thumbnail(); ?>
 
-	<span class="archiveCardCategory highRadius generalBoxBorder"><?php echo $primary_cat->name ?></span>
+	<span class="archiveCardCategory highRadius generalBoxBorder"><?php //echo $primary_cat->name ?></span>
 	
 	<div class="entry-content">
 		<?php
