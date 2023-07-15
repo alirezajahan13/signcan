@@ -752,4 +752,82 @@ table td strong {
 
 .comments-area {
   border-top: 1px solid #e6e6e6;
+}
+
+.aboutUsPageBack .aboutUsPage .aboutUsPageSection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.aboutUsPageBack .aboutUsPage .aboutUsPageSection .aboutUsSectionLeft {
+  width: 38%;
+}
+@media screen and (max-width: 480px) {
+  .aboutUsPageBack .aboutUsPage .aboutUsPageSection .aboutUsSectionLeft {
+    width: 100% !important;
+  }
+}
+.aboutUsPageBack .aboutUsPage .aboutUsPageSection .aboutUsSectionRight {
+  width: 48%;
+}
+@media screen and (max-width: 480px) {
+  .aboutUsPageBack .aboutUsPage .aboutUsPageSection .aboutUsSectionRight {
+    width: 100% !important;
+  }
+}
+
+.contactPageBack .contactPage .contactPageSectionUp {
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 480px) {
+  .contactPageBack .contactPage .contactPageSectionUp {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 768px) {
+  .contactPageBack .contactPage .contactPageSectionUp {
+    flex-direction: column;
+  }
+}
+.contactPageBack .contactPage .contactPageSectionUp .contactPageForm {
+  width: 45%;
+}
+@media screen and (max-width: 480px) {
+  .contactPageBack .contactPage .contactPageSectionUp .contactPageForm {
+    width: 100% !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .contactPageBack .contactPage .contactPageSectionUp .contactPageForm {
+    width: 100%;
+  }
+}
+.contactPageBack .contactPage .contactPageSectionUp .contactPageDetail {
+  width: 45%;
+}
+@media screen and (max-width: 480px) {
+  .contactPageBack .contactPage .contactPageSectionUp .contactPageDetail {
+    width: 100% !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .contactPageBack .contactPage .contactPageSectionUp .contactPageDetail {
+    width: 100%;
+  }
+}
+.contactPageBack .contactPage .contactPageSectionUp .contactPageDetail .contactPageDetailFlex {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.contactPageBack .contactPage .contactPageSectionUp .contactPageDetail .contactPageDetailFlex a {
+  display: flex;
+  align-items: center;
+  width: -moz-max-content;
+  width: max-content;
+}
+.contactPageBack .contactPage .contactPageSectionUp .contactPageDetail .contactPageDetailFlex span {
+  margin-left: 7px;
 }/*# sourceMappingURL=style.css.map */
