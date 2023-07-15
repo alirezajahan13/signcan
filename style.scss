@@ -261,3 +261,70 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .comments-area{
     border-top: 1px solid $backColorLight;
 }
+.aboutUsPageBack{
+    .aboutUsPage{
+        .aboutUsPageSection{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            .aboutUsSectionLeft{
+                width: 38%;
+                @include xs{
+                    width: 100% !important;
+                }
+            }
+            .aboutUsSectionRight{
+                width: 48%;
+                @include xs{
+                    width: 100% !important;
+                }
+            }
+        }
+    }
+}
+.contactPageBack{
+    .contactPage{
+        .contactPageSectionUp{
+            display: flex;
+            justify-content: space-between;
+            @include xs{
+                flex-direction: column;
+            }
+            @include sm{
+                flex-direction: column;
+            }
+            .contactPageForm{
+                width: 45%;
+                @include xs{
+                    width: 100% !important;
+                }
+                @include sm{
+                    width: 100%;
+                }
+            }
+            .contactPageDetail{
+                width: 45%;
+                @include xs{
+                    width: 100% !important;
+                }
+                @include sm{
+                    width: 100%;
+                }
+                .contactPageDetailFlex{
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                    a{
+                        display: flex;
+                        align-items: center;
+                        width: max-content;
+                    }
+                    span{
+                        margin-left: 7px;
+                    }
+                }
+            }
+        }
+    }
+}
