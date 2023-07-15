@@ -7,11 +7,14 @@
  * @package signcan
  */
 
- $taxonomy = 'category'; 
- $primary_cat_id=get_post_meta(get_the_id(),'_yoast_wpseo_primary_' . $taxonomy, true);
- if($primary_cat_id){
-	 $primary_cat = get_term($primary_cat_id, $taxonomy);
- }
+$taxonomy = 'category'; 
+$primary_cat_id=get_post_meta(get_the_id(),'_yoast_wpseo_primary_' . $taxonomy, true);
+if($primary_cat_id){
+	$primary_cat = get_term($primary_cat_id, $taxonomy);
+}
+else{
+	$primary_cat = get_term(wp_get_post_categories( get_the_id())[0], $taxonomy);
+}
 ?>
 
 
