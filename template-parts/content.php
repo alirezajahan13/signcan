@@ -47,7 +47,7 @@ else{
 
 	<?php signcan_post_thumbnail(); ?>
 
-	<span class="archiveCardCategory highRadius generalBoxBorder"><?php echo $primary_cat->name ?></span>
+	<span class="archiveCardCategory highRadius generalBoxBorder"><?php //echo $primary_cat->name ?></span>
 	
 	<div class="entry-content">
 		<?php
