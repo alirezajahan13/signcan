@@ -147,6 +147,9 @@ function signcan_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+	if(is_singular('product')){
+		wp_enqueue_script( 'single-product-script', get_template_directory_uri() . '/js/single-product.js', array(), _S_VERSION, true );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'signcan_scripts' );
 

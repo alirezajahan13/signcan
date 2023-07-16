@@ -398,10 +398,41 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
                 float: none !important;
                 padding-left: 0 !important;
                 img{
-                    border-radius: 10% !important;
+                    border-radius: 10px !important;
                 }
                 &::before{
                     display: none;
+                }
+                &:nth-child(n+5){
+                    display: none;
+                }
+                &:nth-child(4){
+                    position: relative;
+                    cursor: pointer;
+                    &::after{
+                        display: block !important;
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        top: 0;
+                        border-radius: 10px;
+                        background-color: rgba(0,0,0,0.6);
+                    }
+                    .galleryCount{
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        top: 0;
+                        color: #fff;
+                        width: max-content;
+                        height: max-content;
+                        margin: auto;
+                        z-index: 99;
+                        font-size: 30px;
+                    }
                 }
             }
         }
@@ -637,4 +668,10 @@ ul.products{
             width: 48%;
         }
     }
+}
+.wccs-bulk-pricing-table-container table td, .wccs-bulk-pricing-table-container table th{
+    padding: 10px !important;
+}
+.wccs-bulk-pricing-table{
+    width: max-content !important;
 }

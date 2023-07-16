@@ -310,9 +310,9 @@ input[type=checkbox] {
   margin: 0;
 }
 input[type=submit] {
-  background-color: #ED1C24;
-  color: #fff;
-  border: none;
+  background-color: transparent;
+  color: #500b0e;
+  border: 1px solid #af0e14;
   font-weight: 500;
   padding: 15px 25px;
   cursor: pointer;
@@ -321,7 +321,7 @@ input[type=submit] {
   font-size: 14px;
 }
 input[type=submit]:hover {
-  background-color: #c61017;
+  background-color: #fdeced;
 }
 input:focus {
   outline: none;
@@ -932,10 +932,43 @@ table td strong {
   padding-left: 0 !important;
 }
 .singleProductHeader .woocommerce-product-gallery .flex-control-nav li img {
-  border-radius: 10% !important;
+  border-radius: 10px !important;
 }
 .singleProductHeader .woocommerce-product-gallery .flex-control-nav li::before {
   display: none;
+}
+.singleProductHeader .woocommerce-product-gallery .flex-control-nav li:nth-child(n+5) {
+  display: none;
+}
+.singleProductHeader .woocommerce-product-gallery .flex-control-nav li:nth-child(4) {
+  position: relative;
+  cursor: pointer;
+}
+.singleProductHeader .woocommerce-product-gallery .flex-control-nav li:nth-child(4)::after {
+  display: block !important;
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.singleProductHeader .woocommerce-product-gallery .flex-control-nav li:nth-child(4) .galleryCount {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  color: #fff;
+  width: -moz-max-content;
+  width: max-content;
+  height: -moz-max-content;
+  height: max-content;
+  margin: auto;
+  z-index: 99;
+  font-size: 30px;
 }
 .singleProductHeader .entry-summary {
   float: none !important;
@@ -1178,4 +1211,13 @@ ul.products li.product .onsale {
   .homeProductCatParent a {
     width: 48%;
   }
+}
+
+.wccs-bulk-pricing-table-container table td, .wccs-bulk-pricing-table-container table th {
+  padding: 10px !important;
+}
+
+.wccs-bulk-pricing-table {
+  width: -moz-max-content !important;
+  width: max-content !important;
 }/*# sourceMappingURL=style.css.map */

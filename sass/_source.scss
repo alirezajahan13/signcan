@@ -226,9 +226,9 @@ input{
 		margin: 0;
 	}
 	&[type=submit]{
-		background-color: $mainColor;
-		color: #fff;
-		border: none;
+		background-color: transparent;
+		color: $mainColorDark;
+		border: 1px solid darken($mainColor , 15%);
 		font-weight: 500;
 		padding: 15px 25px;
 		cursor: pointer;
@@ -236,7 +236,7 @@ input{
 		border-radius: 5px;
 		font-size: 14px;
 		&:hover{
-			background-color: darken($mainColor , 10%);
+			background-color: lighten($mainColor ,44%);
 		}
 	}
 	&:focus{
