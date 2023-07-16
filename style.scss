@@ -30,6 +30,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .dgwt-wcas-search-form{
     .dgwt-wcas-sf-wrapp{
         padding-left: 0 !important;
+        padding-right: 0 !important;
         .dgwt-wcas-search-submit{
             right: 23px !important;
             left: unset !important;
@@ -44,13 +45,15 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     }
 }
 .mainHeaderParent{
-    padding: 20px 0;
+    padding: 10px 0;
+    background-color: #fff;
     .mainHeader{
         justify-content: flex-start;
         .headerMobileIcon{
             display: none;
             flex-basis: 0;
             flex-grow: 1;
+            flex-wrap: wrap;
             margin-right: 0;
             margin-left: auto;
             justify-content: flex-end;
@@ -74,16 +77,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
                 }
             }
         }
-        .headerLoginBtn , .mobileMenuIcon , .headerCarBtn{
+        .mobHeaderLoginBtn , .mobileMenuIcon , .headerCarBtn{
             display: flex;
             padding: 5px;
         }
         .headerCarBtn {
             margin-left: 10px;
-        }
-        .headerMobileIcon{
-            display: flex;
-            flex-wrap: wrap;
         }
         .mobMenuParent{
             flex-basis: 0;
@@ -100,6 +99,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
             display: flex;
             flex-direction: column;
             margin-left: auto;
+            @include xs{
+                display: none;
+            }
             .generalButton{
                 margin: 0;
                 margin-left: 10px;
@@ -114,23 +116,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
             }
             .rightHeaderUp{
                 justify-content: flex-start;
-                .dgwt-wcas-search-wrapp{
-                    width: max-content;
-                    margin: 0;
-                    @include xs{
-                        width: 100%;
-                    }
-                    .dgwt-wcas-search-form{
-                        max-width: 500px;
-                        width: 500px;
-                        @include sm{
-                            width: 400px;
-                        }
-                        @include xs{
-                            width: unset;
-                        }
-                    }
-                }
             }
             .rightHeaderDown{
                 @include xs{
@@ -149,6 +134,74 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
                             }
 
                         }
+
+                        .menu-item-has-children{
+                            position: relative;
+                            // svg{
+                            //     position: absolute;
+                            //     top: 0;
+                            //     bottom: 0;
+                            //     margin-top: auto;
+                            //     margin-bottom: auto;
+                            //     left: -12px;
+                            //     transition: all 0.3s;
+                            // }
+                            ul{
+                                opacity: 0;
+                                visibility: hidden;
+                                display: flex;
+                                flex-direction: column;
+                                background-color: #fff;
+                                position: absolute;
+                                width: 100px;
+                                top: 15px;
+                                z-index: 9999;
+                                left: 0;
+                                right: 0;
+                                transform: translateY(30px);
+                                transition: all 0.3s;
+                                box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.03);
+                                border-radius: 7px;
+                                overflow: hidden;
+                                li{
+                                    padding: 0;
+                                    border-bottom: 1px solid $backColorDark;
+                                    margin: 0;
+                                    transition: all 0.3s;
+                                    &:last-child{
+                                        border-bottom: none;
+                                    }
+                
+                                    a{
+                                        font-size: 13px;
+                                        font-weight: 400;
+                                        padding: 8px 40px 8px 10px;
+                                        display: block;
+                                        overflow: hidden;
+                                        border-radius: 20px;
+                                        transition: all 0.3s;
+                                    }
+                                    &:hover{
+                                        background-color: lighten($backColorDark, 10%);
+                                    }
+                                    ul{
+                                        display: none;
+                                    }
+                                } 
+                            }
+                            &:hover{
+                                svg{
+                                    transform: rotate(180deg);
+                                }
+                                ul{
+                                    opacity: 1;
+                                    visibility: visible;
+                                    transform: translateY(0);
+                                }
+                            }
+                        }
+
+                        
                     }
                 }
             }
@@ -156,7 +209,50 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     }
 }
 
+.dgwt-wcas-search-wrapp{
+    width: max-content;
+    margin: 0;
+    @include xs{
+        margin: 0 !important;
+        max-width: unset !important;
+    }
+    .dgwt-wcas-search-form{
+        max-width: 500px;
+        width: 500px;
 
+    }
+}
+.stickyHeaderParent{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: -180px;
+    margin: auto;
+    transition: all 0.5s;
+    z-index: 99999;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.03);
+    .headerPartLeft{
+        a{
+            img{
+                width: 80px !important;
+                @include xs{
+                    width: 40px !important;
+                }
+            }
+        }
+
+    }
+}
+.showStickyHeader{
+    top: 0;
+}
+
+.mobSearchParent{
+    border: 1px solid #e6e6e6;
+    padding: 5px;
+    border-radius: 7px;
+    margin-left: 10px;
+}
 
 .mainFooterBack{
     margin-bottom: 0;
@@ -668,6 +764,102 @@ ul.products{
             width: 48%;
         }
     }
+}
+.siteMainOverlay{
+    background-color: rgba(0,0,0,0.8);
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 99998;
+    transition: all 0.2s;
+	opacity: 0;
+	visibility: hidden;
+}
+.mainMobileMenuParent{
+    background-color: #fff;
+    position: fixed;
+    left: -100px;
+    top: 0;
+    bottom: 0;
+    z-index: 99999;
+    width: 70%;
+    height: 100%;
+    transition: all 0.5s;
+    padding: 10px;
+    transition: all 0.3s;
+	opacity: 0;
+	visibility: hidden;
+    z-index: 99999;
+    .mobMenu{
+        ul{
+            padding: 0;
+            margin: 0;
+            li{
+                padding-left: 0;
+                margin: 0;
+                border-bottom: 1px solid $backColorLight;
+                &::before{
+                    display: none;
+                }
+                a{
+                    display: flex;
+                    width: 100%;
+                    padding: 15px 0;
+                    font-size: 14px;
+                }
+            }
+            .menu-item-has-children{
+                display: flex ;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                svg{
+                    width: 30px;
+                    height: 40px;
+                    padding: 9px;
+                    cursor: pointer;
+                    order: 2;
+                }
+                a{
+                    width: calc(100% - 30px);
+                    order: 1;
+                }
+                ul{
+                    display: none;
+                    order: 3;
+                    width: 100%;
+                    padding-right: 7px;
+                    background-color: $backColorDark;
+                    li{
+                        border-color: #fff;
+                        &:last-child{
+                            border-bottom: none;
+                        }
+                        a{
+                            font-size: 11px;
+                            width: 100%;
+                            padding-right: 0;
+                        }
+                        ul{
+                            display: none;
+                        }
+                    }
+                }
+            }    
+        }
+    }
+
+}
+.showSiteOverlay{
+    opacity: 1;
+    visibility: visible;
+}
+.showMobileMenu{
+	opacity: 1;
+	visibility: visible;
+    left: 0;
 }
 .wccs-bulk-pricing-table-container table td, .wccs-bulk-pricing-table-container table th{
     padding: 10px !important;
