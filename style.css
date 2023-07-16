@@ -962,4 +962,54 @@ input[type=number] {
 .woo-custom-tab > h2 {
   border-top: 1px solid #E1E1E1 !important;
   padding-top: 15px !important;
+}
+
+ul.products {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-gap: 30px;
+}
+ul.products::before {
+  display: none !important;
+}
+@media screen and (max-width: 480px) {
+  ul.products {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  ul.products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+ul.products li.product {
+  width: 100% !important;
+  border: 1px solid #e6e6e6;
+  border-radius: 14px;
+  overflow: hidden;
+  font-size: 16px !important;
+}
+ul.products li.product .price, ul.products li.product .woocommerce-loop-product__title, ul.products li.product .star-rating {
+  margin: 0 20px !important;
+  font-weight: 500;
+}
+ul.products li.product .woocommerce-Price-amount bdi {
+  color: #402c2d;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+}
+ul.products li.product::before {
+  display: none;
+}
+ul.products li.product .onsale {
+  display: block;
+  min-width: unset !important;
+  min-height: unset !important;
+  line-height: 20px !important;
+  border-radius: 7px;
+  font-weight: 300;
+  top: 10px !important;
+  right: 10px !important;
+  padding: 5px 15px;
+  background-color: #ed1d27 !important;
 }/*# sourceMappingURL=style.css.map */
