@@ -197,14 +197,61 @@ add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
 add_theme_support( 'wc-product-gallery-lightbox' );
 add_theme_support( 'wc-product-gallery-slider' );
 
-remove_action( 'woocommerce_before_shop_loop' , 'woocommerce_result_count', 20 );
-remove_action( 'woocommerce_after_shop_loop' , 'woocommerce_result_count', 20 );
+add_action( 'woocommerce_after_add_to_cart_quantity', 'ts_quantity_plus_sign' );
+ 
+function ts_quantity_plus_sign() {
+   echo '<button type="button" class="plus" >+</button></div>';
+}
+ 
+add_action( 'woocommerce_before_add_to_cart_quantity', 'ts_quantity_minus_sign' );
+function ts_quantity_minus_sign() {
+   echo '<div class="customQuantityWrapper"><button type="button" class="minus" >-</button>';
+}
 
-
-add_filter('woocommerce_catalog_orderby', 'wc_customize_product_sorting');
-
-
-
+add_action( 'wp_footer', 'ts_quantity_plus_minus' );
+ 
+function ts_quantity_plus_minus() {
+   // To run this on the single product page
+   if ( ! is_product() ) return;
+   ?>
+   <script type="text/javascript">
+          
+      jQuery(document).ready(function($){   
+          
+            $('form.cart').on( 'click', 'button.plus, button.minus', function() {
+ 
+            // Get current quantity values
+            var qty = $( this ).closest( 'form.cart' ).find( '.qty' );
+            var val   = parseFloat(qty.val());
+            var max = parseFloat(qty.attr( 'max' ));
+            var min = parseFloat(qty.attr( 'min' ));
+            var step = parseFloat(qty.attr( 'step' ));
+ 
+            // Change the value if plus or minus
+            if ( $( this ).is( '.plus' ) ) {
+               if ( max && ( max <= val ) ) {
+                  qty.val( max );
+               } 
+            else {
+               qty.val( val + step );
+                 }
+            } 
+            else {
+               if ( min && ( min >= val ) ) {
+                  qty.val( min );
+               } 
+               else if ( val > 1 ) {
+                  qty.val( val - step );
+               }
+            }
+             
+         });
+          
+      });
+          
+   </script>
+   <?php
+}
 
 add_action( 'after_setup_theme','db_stack_product_tabs' );
 
@@ -218,57 +265,8 @@ function db_stack_product_tabs(){
 function db_get_tab_template_parts() {
     // Include required template parts
     ?>
-    <div class="woo-description-section"><div class="homeSectionTitle"><h2>Description</h2></div><div class="innerDescription"><?php wc_get_template( 'single-product/tabs/description.php' ); ?></div></div>
-    <div class="woo-information-section"><div class="homeSectionTitle"><h2>Specifications</h2></div><div class="innerInformation"><?php wc_get_template( 'single-product/tabs/additional-information.php' ); ?></div></div>
-    <?php comments_template();
+    <div class="woo-description-section woo-custom-tab"><?php wc_get_template( 'single-product/tabs/description.php' ); ?></div>
+    <div class="woo-information-section woo-custom-tab"><?php wc_get_template( 'single-product/tabs/additional-information.php' ); ?></div>
+    <div class="woo-review-section woo-custom-tab"><h2>Reviews</h2><?php comments_template(); ?></div>
+    <?php 
 }
-
-
-
-
-
-
-add_filter( 'woocommerce_product_tabs', 'woo_new_direction_tab' );
-function woo_new_direction_tab( $tabs ) {
-
-    // Adds the new tab
-
-    if (!empty(the_field('directions'))) {
-        $tabs['direction_tab'] = array(
-            'title'     => __( 'Direction', 'woocommerce' ),
-            'priority'  => 60,
-            'callback'  => 'woo_new_direction_tab_content'
-        );
-    }
-
-    return $tabs;
-
-}
-
-
-function woo_new_direction_tab_content() {
-
-    // The new tab content
-
-    echo the_field('directions');
-
-}
-
-function filter_wpseo_breadcrumb_separator($this_options_breadcrumbs_sep) {
-    return '<svg fill="#505050" width="10px" height="10px" xmlns="http://www.w3.org/2000/svg" viewBox="-4 -0.2 20.4 20.4"><path fill-rule="evenodd" d="M299.634 6519.292a1.063 1.063 0 0 0-1.464 0l-8.563 8.264a1.95 1.95 0 0 0 0 2.827l8.625 8.325c.4.385 1.048.39 1.454.01a.975.975 0 0 0 .01-1.425l-7.893-7.617a.975.975 0 0 1 0-1.414l7.83-7.557a.974.974 0 0 0 0-1.413" transform="translate(-289 -6519)"></path></svg>';
-};
-
-// add the filter
-add_filter('wpseo_breadcrumb_separator', 'filter_wpseo_breadcrumb_separator', 10, 1);
-add_filter( 'wpseo_breadcrumb_links', 'wpseo_breadcrumb_remove_postname' );
-function wpseo_breadcrumb_remove_postname( $links ) {
-	if((is_singular('post') || is_product()) && sizeof($links) > 1 ){
-		array_pop($links);
-	}
-	return $links;
-}
-	
-remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);
-
-
-

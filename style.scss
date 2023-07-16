@@ -328,3 +328,140 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
         }
     }
 }
+.singleProductHeader{
+    .woocommerce-product-gallery{
+        float: none !important;
+        width: 38% !important;
+        .woocommerce-product-gallery__image{
+            img{
+                border-radius: 10px !important;
+            }
+        }
+        .flex-control-nav{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            li{
+                width: 23% !important;
+                float: none !important;
+                padding-left: 0 !important;
+                img{
+                    border-radius: 10% !important;
+                }
+                &::before{
+                    display: none;
+                }
+            }
+        }
+    }
+    .entry-summary{
+        float: none !important;
+        width: 59% !important;
+        .price{
+            color: $textColorDark !important;
+            font-size: 20px !important;
+        }
+        form.cart{
+            display: flex !important;
+            flex-wrap: wrap !important;
+            .single_add_to_cart_button{
+                background-color: $backColorGreen !important;
+                font-weight: 400 !important;
+                border-radius: 5px !important;
+                width: 330px;
+                height: 50px;
+                font-size: 16px !important;
+                float: none !important;
+            }
+        }
+        
+    }
+}
+.woocommerce-product-details__short-description{
+    margin: 10px 0 !important;
+    *{
+        font-size: 14px !important;
+        margin-bottom: 0 !important;
+    }
+}
+.woocommerce-product-rating{
+    margin-bottom: 5px !important;
+}
+.single-product div.product form.cart .quantity {
+    float: none !important;
+    margin: 0 !important;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.customQuantityWrapper{
+    position: relative;
+    padding-right: 25px;
+    margin-right: 5px;
+    .plus , .minus{
+        height: 25.5px;
+        width: 25.5px;
+        position: absolute;
+        background: none !important;
+        border: 1px solid $backColorDark !important;
+        font-weight: 300 !important;
+        font-size: 18px !important;
+    }
+    .quantity{
+        input{
+            height: 50px !important;
+            width: 50px !important;
+            margin: 0 !important;
+            border-radius: 5px 0 0 5px !important;
+            border: 1px solid $backColorDark !important;
+        }
+    }
+    .plus{
+        border-radius: 0 5px 0 0 !important;
+        right: 0;
+        top: 0;
+    }
+    .minus{
+        border-radius: 0 0 5px 0 !important;
+        right: 0;
+        bottom: 0;
+    }
+}
+.woo-information-section{
+    table{
+        tr{
+            border: none !important;
+            background-color: transparent !important;
+        }
+        th , th p , td , td p{
+            border: none !important;
+            background-color: transparent !important;
+            font-style: normal !important;
+            color: $textColorDark !important;
+            font-weight: 500 !important;
+            text-align: left !important;
+            font-size: 16px !important;
+        }
+        th , td{
+            padding: 10px !important;
+        }
+        th{
+            width: 180px !important;
+            opacity: 0.6 !important;
+        }
+    }
+}
+.woo-custom-tab{
+    >h2{
+        border-top: 1px solid #E1E1E1 !important;
+        padding-top: 15px !important;
+    }
+}
