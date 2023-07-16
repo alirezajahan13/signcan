@@ -23,8 +23,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 
 @import 'sass/variables'; 
-@import 'sass/source';
 @import 'sass/breakpoints';
+@import 'sass/source';
 
 
 .dgwt-wcas-search-form{
@@ -46,33 +46,66 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .mainHeaderParent{
     padding: 20px 0;
     .mainHeader{
-        .headerPartLeft , .headerParetRight{
-            width: 48%;
-        }
+        justify-content: flex-start;
         .headerMobileIcon{
             display: none;
+            flex-basis: 0;
+            flex-grow: 1;
+            margin-right: 0;
+            margin-left: auto;
+            justify-content: flex-end;
             @include xs{
-                display: block;
+                display: flex;
             }
         }
         .headerPartLeft{
+            margin-right: 30px;
+            @include xs{
+                margin: 0 !important;
+            }
             a{
                 display: flex;
                 height: auto;
-                width: 100px;
+                img{
+                    width: 100px;
+                    @include xs{
+                        width: 60px;
+                    }
+                }
+            }
+        }
+        .headerLoginBtn , .mobileMenuIcon , .headerCarBtn{
+            display: flex;
+            padding: 5px;
+        }
+        .headerCarBtn {
+            margin-left: 10px;
+        }
+        .headerMobileIcon{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .mobMenuParent{
+            flex-basis: 0;
+            flex-grow: 1;
+            margin-left: 0;
+            margin-right: auto;
+            justify-content: flex-start;
+            display: none;
+            @include xs{
+                display: flex;
             }
         }
         .headerParetRight{
-            @include xs{
-                display: none;
-            }
-            .rightHeaderUp , .rightHeaderDown{
-                width: 100%;
-            }
+            display: flex;
+            flex-direction: column;
+            margin-left: auto;
             .generalButton{
                 margin: 0;
-                margin-right: 3px;
-                height: max-content;
+                margin-left: 10px;
+                @include xs{
+                    display: none;
+                }
             }
             .headerLoginBtn{
                 svg{
@@ -80,12 +113,29 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
                 }
             }
             .rightHeaderUp{
+                justify-content: flex-start;
                 .dgwt-wcas-search-wrapp{
-                    width: 75%;
+                    width: max-content;
                     margin: 0;
+                    @include xs{
+                        width: 100%;
+                    }
+                    .dgwt-wcas-search-form{
+                        max-width: 500px;
+                        width: 500px;
+                        @include sm{
+                            width: 400px;
+                        }
+                        @include xs{
+                            width: unset;
+                        }
+                    }
                 }
             }
             .rightHeaderDown{
+                @include xs{
+                    display: none;
+                }
                 .desktopMenu{
                     ul{
                         padding: 0;
@@ -106,6 +156,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     }
 }
 
+
+
 .mainFooterBack{
     margin-bottom: 0;
     .iconSocialSection{
@@ -124,7 +176,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
         }
     }
     .mainFooter{
-        background-color: $backColorLighter;
+        background-color: $backColorDark2;
         .mainFooterInner{
             display: flex;
             flex-wrap: wrap;
@@ -325,6 +377,80 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
                     }
                 }
             }
+        }
+    }
+}
+
+.homeProductCatParent{
+    justify-content: space-evenly;
+    @include xs{
+        justify-content: space-between;
+    }
+    padding: 30px 0;
+    a{
+        width: 17%;
+        height: 200px;
+        position: relative;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 30px;
+        overflow: hidden;
+        border-radius: 15px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        div{
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -15px;
+            width: 110%;
+            z-index: 9998;
+            height: 40%;
+            transform: rotate(-7deg);
+            margin: 0;
+            padding: 0;
+        }
+        h3{
+            position: absolute;
+            z-index: 9999;
+            color: #fff;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 22px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            min-height: 45px;
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+        @include md{
+            width: 26%;
+        }
+        @include sm{
+            width: 40%;
+            height: 180px;
+        }
+        @include xs{
+            height: 130px;
+            div{
+                height: 50%;
+            }
+            h3{
+                min-height: 30px;
+                line-height: 18px;
+                font-size: 14px;
+            }
+        }
+        @include xxs{
+            width: 48%;
         }
     }
 }
